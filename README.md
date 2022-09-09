@@ -9,7 +9,7 @@ Eisenstein, Jacob. "Unsupervised learning for lexicon-based classification." Pro
 
 BibTex:
 ```
-{@inproceedings{eisenstein2017unsupervised,
+@inproceedings{eisenstein2017unsupervised,
   title={Unsupervised learning for lexicon-based classification},
   author={Eisenstein, Jacob},
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
