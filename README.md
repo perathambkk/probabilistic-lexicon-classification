@@ -19,6 +19,8 @@ BibTex:
 }
 ```
 ------------------------------------------------------------------------------------------------------------
+(Following texts are from the original repo's readme.)
+
 It includes:
 
 - My code (Prof. Eisenstein code's)
