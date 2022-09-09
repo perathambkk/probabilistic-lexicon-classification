@@ -1,6 +1,18 @@
-# Unsupervised Learning for Lexicon-Based Classification
+# A Python3 compatible fork of Unsupervised Learning for Lexicon-Based Classification
 
-This is the implementation from the eponymous AAAI 2017 paper. It includes:
+This is the implementation from the eponymous AAAI 2017 paper. 
+Please cite
+Eisenstein, Jacob. "Unsupervised learning for lexicon-based classification." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 31. No. 1. 2017.
+\cite{@inproceedings{eisenstein2017unsupervised,
+  title={Unsupervised learning for lexicon-based classification},
+  author={Eisenstein, Jacob},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={31},
+  number={1},
+  year={2017}
+}
+
+It includes:
 
 - My code
 - The Bing Liu lexicon (https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)
