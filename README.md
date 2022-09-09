@@ -18,6 +18,9 @@ BibTex:
   year={2017}
 }
 ```
+
+My notebook (from bayeslex.py -- the main file) is at [Unsup_Lexicon.ipynb](Unsup_Lexicon.ipynb).
+
 ------------------------------------------------------------------------------------------------------------
 (Following texts are from the original repo's readme.)
 
