@@ -82,14 +82,14 @@ def main():
                                     max_k=args.max_k,
                                     verbosity=args.verbosity)
     if args.optimizer == 'admm':
-        print 'ADMM optimization'
+        print('ADMM optimization')
         opt.estimateADMM(max_iter=args.iters_per_epoch,
                          n_epochs=args.epochs,
                          rho=args.admm_rho,
                          grad_based=args.grad_based
         )
     elif args.optimizer == 'slsqp':
-        print 'SLSQP optimization (warning, slow!)'
+        print('SLSQP optimization (warning, slow!)')
         opt.estimateSLSQP(max_iter=args.iters_per_epoch,
                           n_epochs=args.epochs)
     else:
