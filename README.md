@@ -5,7 +5,7 @@ This is the implementation from the eponymous AAAI 2017 paper.
 Please cite
 Eisenstein, Jacob. "Unsupervised learning for lexicon-based classification." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 31. No. 1. 2017.
 
-BibTex
+BibTex:
 ```
 {@inproceedings{eisenstein2017unsupervised,
   title={Unsupervised learning for lexicon-based classification},
