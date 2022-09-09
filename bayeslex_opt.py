@@ -12,7 +12,7 @@ class BayesLexOptimizer:
             co_pn, e_co_pn = getCoCountsTwoLex(x,pos_lex,neg_lex)
             self.pos_lex = list(np.array(pos_lex)[co_pn.sum(axis=1) < e_co_pn.sum(axis=1)])
             self.neg_lex = list(np.array(neg_lex)[co_pn.sum(axis=0) < e_co_pn.sum(axis=0)])
-            print "prefiltering from %d,%d to %d,%d"%(co_pn.shape[0],co_pn.shape[1],len(self.pos_lex),len(self.neg_lex))
+            print("prefiltering from %d,%d to %d,%d"%(co_pn.shape[0],co_pn.shape[1],len(self.pos_lex),len(self.neg_lex)))
         else:
             self.pos_lex = pos_lex
             self.neg_lex = neg_lex
@@ -79,11 +79,11 @@ class BayesLexOptimizer:
             # termination (page 19) p=1, n=size(pos_words), m=size(neg_words)
 
             if self.verbosity >= 2:
-                print it, 'u =',u, f_eval, violation
+                print(it, 'u =',u, f_eval, violation)
             if self.verbosity >= 1:
-                print "%d.\tDual residual=%.8f\tPrimal residual=%.8f\tRho=%.3f"%(it,dual_residual,primal_residual,rho)
+                print("%d.\tDual residual=%.8f\tPrimal residual=%.8f\tRho=%.3f"%(it,dual_residual,primal_residual,rho))
             if self.verbosity >= 2:
-                print ""
+                print("")
 
             eps_abs = 1e-3 / self.x_sum
             eps_rel = 1e-3 / self.x_sum
@@ -94,7 +94,7 @@ class BayesLexOptimizer:
             eps_dual2 = np.sqrt(self.k_neg.shape[0]) * eps_abs + eps_rel * np.linalg.norm(u * self.mu_neg)**2
             if dual_residual < eps_dual1 + eps_dual2 and primal_residual < eps_primal:
                 if self.verbosity >= 0:
-                    print "done!\tit=%d\tdual=%.2e<min(%.2e,%.2e)\tprimal=%.2e<%.2e"%(it,dual_residual,eps_dual1,eps_dual2,primal_residual,eps_primal)
+                    print("done!\tit=%d\tdual=%.2e<min(%.2e,%.2e)\tprimal=%.2e<%.2e"%(it,dual_residual,eps_dual1,eps_dual2,primal_residual,eps_primal))
                 break
 
         ## ADMM stuff
@@ -181,5 +181,5 @@ class BayesLexOptimizer:
             self.k_neg = result_neg.x
 
             if self.verbosity > 0:
-                print it, result_pos.fun + result_neg.fun
+                print(it, result_pos.fun + result_neg.fun)
 

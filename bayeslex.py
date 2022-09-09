@@ -49,26 +49,26 @@ def main():
 
     y,x,vocab = loadData(args.prefix,args.vocab_size)
     
-    print args
-    print "===================================="
-    print "docs: %d\t vocabulary: %d\t tokens per doc: %.3f"%(x.shape[0],x.shape[1],x.sum(axis=1).mean())
+    print(args)
+    print("====================================")
+    print("docs: %d\t vocabulary: %d\t tokens per doc: %.3f"%(x.shape[0],x.shape[1],x.sum(axis=1).mean()))
     pos_lex = getLex(args.poslex,vocab)
     neg_lex = getLex(args.neglex,vocab)
-    print "lexicon sizes: %d\t%d"%(len(pos_lex),len(neg_lex))
+    print("lexicon sizes: %d\t%d"%(len(pos_lex),len(neg_lex)))
     
     clf = getLexClassifier(pos_lex,neg_lex,vocab)
     
     pred_baseline = np.array(clf.dot(x.T).todense())[0] 
-    print resultString(scale(pred_baseline,x),y,"baseline")
+    print(resultString(scale(pred_baseline,x),y,"baseline"))
     
     pred_presence = np.array(clf.dot((x>0).T).todense())[0] 
-    print resultString(scale(pred_presence,x),y,"presence")
+    print(resultString(scale(pred_presence,x),y,"presence"))
 
     pred_pmi = pmiPredictor(x,pos_lex,neg_lex)
-    print resultString(scale(pred_pmi,x),y,"pmi")
+    print(resultString(scale(pred_pmi,x),y,"pmi"))
     
     e_mu, c_hat = estimateDCMFromMOM(x)
-    print 'c_hat=',c_hat
+    print('c_hat=',c_hat)
     sys.stdout.flush()
 
     # load extra data if provided
@@ -96,10 +96,10 @@ def main():
         raise Exception('Valid optimizers are admm and slsqp only')
         
     pred_khat = makePredictionsKPerWord(x,opt.pos_lex,opt.neg_lex,opt.k_pos,opt.k_neg,c_hat,bayesian=False)
-    print resultString(pred_khat,y,"LexiMom")
+    print(resultString(pred_khat,y,"LexiMom"))
 
     pred_khat_bayes = makePredictionsKPerWord(x,opt.pos_lex,opt.neg_lex,opt.k_pos,opt.k_neg,c_hat,bayesian=True)
-    print resultString(pred_khat_bayes,y,"LexiMom-Bayes")
+    print(resultString(pred_khat_bayes,y,"LexiMom-Bayes"))
 
     
 if __name__ == "__main__":
