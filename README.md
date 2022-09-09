@@ -1,6 +1,6 @@
 # A Python3 compatible fork of Unsupervised Learning for Lexicon-Based Classification (with a notebook)
 
-This is the implementation from the eponymous AAAI 2017 paper. 
+This is the (forked :fork_and_knife:) implementation from the eponymous AAAI 2017 paper. 
 
 Please cite:
 ```
