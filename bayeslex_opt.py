@@ -48,7 +48,7 @@ class BayesLexOptimizer:
         
         u = 0.
         projector = lambda x : np.clip(x,0,max_k)
-        for it in xrange(n_epochs):
+        for it in range(n_epochs):
             # solve k_pos = argmin(k_pos \in C) F(k_pos,k_neg) + penalty
             P_diag, P_low_rank, q, r = self.getLowRankQuadraticParams(self.co_pos,self.co_neg,self.mu_pos,self.mu_neg,self.k_neg,self.s,u,rho)
             self.k_pos = admm.admmQuadBounded(P_diag.copy(),P_low_rank,q.copy(), projector, max_iter=max_iter,rho=1.)
@@ -155,7 +155,7 @@ class BayesLexOptimizer:
         return self.mu_neg
 
     def estimateSLSQP(self,n_epochs=10,max_iter=5):
-        for it in xrange(n_epochs):
+        for it in range(n_epochs):
             result_pos = sp.optimize.minimize\
                          (self.sqErrPos,
                           self.k_pos,

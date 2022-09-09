@@ -63,11 +63,11 @@ def doIMDB(outprefix):
     with codecs.open(outprefix+'.bow','w',encoding='utf-8') as fout_bow:
         with codecs.open(outprefix+'.key','w') as fout_key:
             for filename in posdocs:
-                print >>fout_key, filename,'POS'
-                print >>fout_bow, getIMDBWordCounts(filename)
+                print(filename, 'POS', file=fout_key)
+                print(getIMDBWordCounts(filename), file=fout_bow)
             for filename in negdocs:
-                print >>fout_key, filename,'NEG'
-                print >>fout_bow, getIMDBWordCounts(filename)
+                print(filename,'NEG',file=fout_key)
+                print(getIMDBWordCounts(filename),file=fout_bow)
 
 def doCornell(outprefix):
     negdocs = glob(os.path.join(cornell_base,'neg/*.txt'))
@@ -75,11 +75,11 @@ def doCornell(outprefix):
     with codecs.open(outprefix+'.bow','w',encoding='utf-8') as fout_bow:
         with codecs.open(outprefix+'.key','w') as fout_key:
             for filename in posdocs:
-                print >>fout_key, filename,'POS'
-                print >>fout_bow, getCornellCounts(filename)
+                print(filename,'POS', file=fout_key)
+                print(getCornellCounts(filename), file=fout_bow)
             for filename in negdocs:
-                print >>fout_key, filename,'NEG'
-                print >>fout_bow, getCornellCounts(filename)
+                print(filename,'NEG', file=fout_key)
+                print(getCornellCounts(filename), file=fout_bow)
                 
 def doCorpusCine(outprefix):
     fails = []
@@ -89,8 +89,8 @@ def doCorpusCine(outprefix):
                 try:
                     counts,label = getCorpusCineCountsAndLabels(filename)
                     if counts is not None:
-                        print >>fout_bow, counterString(counts)
-                        print >>fout_key, filename,label
+                        print(counterString(counts), file=fout_bow)
+                        print(filename,label, file=fout_key)
                 except:
                     fails.append(filename)
     return fails
@@ -102,8 +102,8 @@ def doAmazonLabelGroup(files,label,fout_key,fout_bow):
             for line in fin:
                 kvpairs = [x.split(':') for x in line.split() if valid(x)]
                 counts = {i:int(j) for i,j in kvpairs if i.isalpha()}
-                print >>fout_bow, counterString(counts)
-                print >>fout_key, label
+                print(counterString(counts), file=fout_bow)
+                print(label, file=fout_key)
     
 
 def doAmazon(outprefix):
