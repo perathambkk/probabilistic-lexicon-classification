@@ -21,11 +21,11 @@ BibTex:
 ------------------------------------------------------------------------------------------------------------
 It includes:
 
-- My code
+- My code (Prof. Eisenstein code's)
 - The Bing Liu lexicon (https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)
 - The Cornell sentiment polarity dataset, version 2.0 (https://www.cs.cornell.edu/people/pabo/movie-review-data/)
 
-I cannot promise to provide much support for the code, but I will try.
+I (Prof. Eisenstein) cannot promise to provide much support for the code, but I will try.
 
 # Reproducing results
 
