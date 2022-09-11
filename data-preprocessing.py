@@ -25,7 +25,7 @@ cornell_base = 'txt_sentoken'
 amazon_base = 'amazon-original-from-dredze'
 
 def counterString(counts):
-    return ' '.join(['%s:%s'%(key,val) for key,val in counts.iteritems()])
+    return ' '.join(['%s:%s'%(key,val) for key,val in counts.items()])
 
 def getIMDBWordCounts(docname):
     counter = Counter()
