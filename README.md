@@ -46,4 +46,4 @@ You can get the other datasets in the paper at the following locations:
 - Amazon: https://www.cs.jhu.edu/~mdredze/datasets/sentiment/
 - CorpusCine: http://www.lsi.us.es/~fermin/index.php/Datasets
 
-The ISOL leixcon was obtained here: http://metashare.upf.edu/repository/browse/isol/f93c81ba65c911e48763000c291ecfc893e66d98695145c0b0066cfa00e6ccda/
+The ISOL lexicon was obtained here: http://metashare.upf.edu/repository/browse/isol/f93c81ba65c911e48763000c291ecfc893e66d98695145c0b0066cfa00e6ccda/
